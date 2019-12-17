@@ -1,8 +1,19 @@
 @import url("reset.css");
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap');
-html, body{
+html, 
+body{
     background: #253141;
     font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient(
+    to bottom, 
+    rgba(37, 49, 65, 0.7) 0%,
+    #253141 80%,
+    #253141 100%
+    ),
+    url("https://ae01.alicdn.com/kf/HTB1dGO2KFXXXXbgXFXXq6xXFXXXf/226077377/HTB1dGO2KFXXXXbgXFXXq6xXFXXXf.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 header{
     display: flex;
@@ -28,8 +39,15 @@ header .left-menu .menu a{
     text-decoration: none;
     padding: 0 20px;
     text-transform: uppercase;
-    font-weight: 300; 
-
+    font-weight: 300;
+    transition: all .2s ease-in-out;
+}
+header .left-menu .menu .fas{
+  margin-left: 10px
+}
+header .left-menu .menu a:hover{
+  color: rgba(255,255,255,1);
+  transition: all .2s ease-in-out;
 }
 header .right-menu {
     display: flex;
@@ -43,6 +61,14 @@ header .right-menu .language{
     text-transform: uppercase;  
     font-weight: 300; 
 }
+header .right-menu .language:hover{
+  color: rgba(255, 255, 255, 0.8);
+
+}
+header .right-menu .language .fas{
+  margin-right: 10px ;
+
+}
 header .right-menu .signin{
     background: #0375d5;
     border-radius: 4px;
@@ -53,20 +79,19 @@ header .right-menu .signin{
     color: white
 }
 .container{
-    width: 1200px;
+    width: 1400px;
     margin: 0 auto;
 }
-#featured{
-  padding: 50px 0;
-
-}
-#featured .title{
-  padding: 50px 0;
+.section-title{
   font-size: 1.8rem;
   color: white;
   margin-bottom: 30px;
-
 }
+
+#featured{
+  padding: 50px 0 50px;
+}
+
 #featured .videos-section {
     display: grid;
     grid-template-columns: 1fr 2fr 620px 2fr 1fr;
@@ -84,6 +109,7 @@ header .right-menu .signin{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 #featured .videos-section .video.center{
     width: 100%;
@@ -99,10 +125,23 @@ header .right-menu .signin{
     transform: scale(1.05);
     border: 2px solid #00b4f0;
 }
-#featured .videos-section .video:nth-child(1) .image{
+#featured .videos-section .video:nth-child(1) .image, #featured .videos-section .video:nth-child(5) .image{
   position: relative;  
 }
-#featured .videos-section .video:nth-child(1) .image  .arrow{
+#featured .videos-section .video:nth-child(1) .image  .arrow {
+  position: absolute;  
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 100%;
+  transition: all .2s ease-in-out;
+}
+#featured .videos-section .video:nth-child(1) .image  .arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+#featured .videos-section .video:nth-child(5) .image  .arrow{
   position: absolute;  
   background: rgba(0, 0, 0, 0.5);
   display: flex;
@@ -110,10 +149,101 @@ header .right-menu .signin{
   align-items: center;
   padding: 20px;
   height: 100%;
+  right: 0;
+  transition: all .2s ease-in-out;
+}
+#featured .videos-section .video:nth-child(5) .image  .arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+#featured .videos-section .video:nth-child(1) .image  .arrow .fas,
+#featured .videos-section .video:nth-child(5) .image  .arrow .fas {
+  font-size: 4rem;
+  color: #00b4f0;
+}
+#featured .dots{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px
+}
+#featured .dots .circles{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#featured .dots .circles .circle{
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+#featured .dots .circles .circle .background-color{
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: white;
+  transition: all .2s ease-in-out;
+}
+#featured .dots .circles .circle:hover .background-color{
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background:#00b4f0;
+}
+#featured .circles .circle.active .background-color{
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: white; 
+}
+#top-games{
+
+  
+}
+#top-games .games{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+}
+#top-games .games .game{
+  background: url("https://3vzy8m3eenx1p8gs2ojxf24g-wpengine.netdna-ssl.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2019/03/Apex_Legends_Banner_Image.jpg.webp");
+  background-position: top-center;
+  background-repeat: no-repeat;
+  background-size:cover ;
+  height: 250px;
+  border-radius: 5px;
+  position: relative;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0, 0.45);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0, 0.45);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0, 0.45);
+  overflow: hidden;
+}
+#top-games .games .game .info{
+  background: #253041;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 10px;
+  color: white;
+}
+#top-games .games .game:hover .info{
+  background: #313f55;
+}
+#top-games .games .game .info .title{
+  font-weight: 600;
+  margin-bottom: 10px;
 
 
+}
+#top-games .games .game .info .views{
+  font-weight: 300;
+  color: #8c919d;
+  font-size: 0.9rem;
+}
+#top-games .games .game .info .views .fa{
+  margin-right: 10px;
+}
 
 
 
